@@ -831,8 +831,8 @@ button:hover {
 .feature-card,
 .care-card,
 .review-card {
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp 0.8s ease;
+  animation-fill-mode: backwards;
 }
 
 /* Cards appear one after another */
@@ -855,5 +855,15 @@ button:hover {
 .care-card:nth-child(3),
 .review-card:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+/* Hover effect */
+.pet-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
 }
 
