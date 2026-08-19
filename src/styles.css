@@ -810,3 +810,49 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* ===== PAGE ANIMATIONS ===== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pet-card,
+.feature-card,
+.care-card,
+.review-card {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Cards appear one after another */
+.pet-card:nth-child(1),
+.feature-card:nth-child(1),
+.care-card:nth-child(1),
+.review-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.pet-card:nth-child(2),
+.feature-card:nth-child(2),
+.care-card:nth-child(2),
+.review-card:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.pet-card:nth-child(3),
+.feature-card:nth-child(3),
+.care-card:nth-child(3),
+.review-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
