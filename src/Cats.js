@@ -8,7 +8,7 @@ function Cats() {
       breed: "British Shorthair",
       age: "2 Years",
       gender: "Female",
-      image: "/images/bella.jpg"
+      image: process.env.PUBLIC_URL + "/images/bella.jpg"
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ function Cats() {
       breed: "Domestic Shorthair",
       age: "1 Year",
       gender: "Male",
-      image: "/images/leo.jpg"
+      image: process.env.PUBLIC_URL + "/images/coco.jpg"
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ function Cats() {
       breed: "Ragdoll",
       age: "3 Years",
       gender: "Female",
-      image: "/images/coco.jpg"
+      image: process.env.PUBLIC_URL + "/images/leo.jpg"
     }
   ];
 

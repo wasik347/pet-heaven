@@ -8,7 +8,7 @@ function Dogs() {
       breed: "Golden Retriever",
       age: "2 Years",
       gender: "Male",
-      image: "/images/milo.jpg"
+      image: process.env.PUBLIC_URL + "/images/milo.jpg"
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ function Dogs() {
       breed: "Corgi",
       age: "1 Year",
       gender: "Female",
-      image: "/images/luna.jpg"
+      image: process.env.PUBLIC_URL + "/images/luna.jpg"
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ function Dogs() {
       breed: "Labrador",
       age: "3 Years",
       gender: "Male",
-      image: "/images/max.jpg"
+      image: process.env.PUBLIC_URL + "/images/max.jpg"
     }
   ];
 
