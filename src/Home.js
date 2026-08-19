@@ -27,7 +27,7 @@ function Home() {
 
         <div className="hero-visual">
           <img
-            src="/images/hero-pets.jpg"
+            src={process.env.PUBLIC_URL + "/images/hero-pets.jpg"}
             alt="Dog and cat waiting for adoption"
             className="hero-pet-image"
           />
