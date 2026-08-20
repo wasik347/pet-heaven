@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const [loggedIn, setLoggedIn] = useState(() => {
+    return localStorage.getItem("petHeavenLoggedInUser") !== null;
+    });
   const [error, setError] = useState("");
+  const loggedInUser = JSON.parse(
+    localStorage.getItem("petHeavenLoggedInUser")
+    );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,10 +34,14 @@ function Login() {
       localStorage.setItem(
         "petHeavenLoggedInUser",
         JSON.stringify(savedMember)
-      );
+    );
 
-      setError("");
-      setLoggedIn(true);
+    window.dispatchEvent(new Event("userLoginChanged"));
+
+    setError("");
+    setLoggedIn(true);
+    
+    navigate("/");
     } else {
       setError("Invalid email or password.");
     }
@@ -56,7 +67,9 @@ function Login() {
         {loggedIn ? (
           <div className="success-message">
             <h2>🐾 Login Successful!</h2>
-            <p>Welcome back to Pet Heaven.</p>
+            <p>
+                Welcome back, {loggedInUser?.fullName || "Member"}!
+            </p>
 
             <button onClick={handleLogout}>
               Logout

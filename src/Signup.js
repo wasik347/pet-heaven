@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [submitted, setSubmitted] = useState(false);
@@ -59,9 +60,15 @@ function Signup() {
               successfully created.
             </p>
 
-            <button onClick={() => setSubmitted(false)}>
-              Create Another Account
-            </button>
+            <div className="success-actions">
+                <Link to="/login" className="primary-btn">
+                    Go to Login
+                </Link>
+
+                <button onClick={() => setSubmitted(false)}>
+                    Create Another Account
+                </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
